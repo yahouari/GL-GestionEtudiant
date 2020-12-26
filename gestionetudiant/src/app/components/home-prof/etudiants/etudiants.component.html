@@ -1,0 +1,28 @@
+<ng-container *ngIf="courses">
+
+  <p-accordion *ngFor="let c of courses" >
+    <div>
+      <p-accordionTab header="{{c.cours.nom}}">
+        <button style="margin-top: 15px;margin-bottom: 15px;" pButton pRipple (click)="generatePdf(c)" label="Générer la liste d'étudiant"></button>
+
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">Nom</th>
+
+          </tr>
+          </thead>
+          <tbody>
+
+          <tr *ngFor="let etu of c.etudiant">
+
+            <td> {{etu}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </p-accordionTab>
+    </div>
+  </p-accordion>
+</ng-container>
+
+

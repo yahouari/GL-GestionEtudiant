@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "management.cloud.gateway.default-filters",
+      "type": "java.lang.String",
+      "description": "Description for management.cloud.gateway.default-filters."
+    },
+    {
+      "name": "management.security.oauth2.client.registration.keycloak.client-secret",
+      "type": "java.lang.String",
+      "description": "Description for management.security.oauth2.client.registration.keycloak.client-secret."
+    }
+  ] }

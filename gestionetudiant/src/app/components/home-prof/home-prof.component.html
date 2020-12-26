@@ -1,0 +1,28 @@
+<div class="container" id="container">
+    <h1><img class="pi-image prof" src="assets/images/prof.png"> Espace Enseignant</h1>
+  <input pButton type="button" (click)="logout()"  value="Deconnexion">
+  <div class="home">
+    <p-tabMenu #menuItems [model]="items" [activeItem]="activeItem" (click)="activeElement()"></p-tabMenu>
+    <div [ngSwitch]="this.activeItem.label">
+
+      <div *ngSwitchCase="this.items[0].label">
+        <app-acceuil-home></app-acceuil-home>
+      </div>
+      <div *ngSwitchCase="this.items[1].label">
+        <app-etudiants></app-etudiants>
+      </div>
+      <div *ngSwitchCase="this.items[2].label">
+      <app-add-cours></app-add-cours>
+      </div>
+
+
+    </div>
+    </div>
+</div>
+
+
+
+
+
+
+

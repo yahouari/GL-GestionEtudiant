@@ -1,0 +1,61 @@
+<form #f="ngForm" name="form" [formGroup]="form" >
+  <div class="container inscr">
+    <div class="form-group">
+        <span class="p-float-label">
+    <input id="float-input" type="text" formControlName="username" pInputText required="required">
+    <label for="float-input">Username ( Nom Complet )</label>
+        </span>
+      <span class="p-float-label">
+    <input id="float-password" type="password" formControlName="password"  pPassword required>
+    <label for="float-password">Password</label>
+        </span>
+      <div *ngIf="checkpassword()" style="margin-top: 10px;margin-bottom: 10px;">
+        <p-message  severity="error" text="pas le meme mot de passe"></p-message>
+      </div>
+      <span class="p-float-label">
+    <input id="float-repassword" type="password" formControlName="confirmedPassword" pPassword required>
+    <label for="float-repassword">Confirm your Password</label>
+        </span>
+
+      <span class="p-float-label">
+    <input id="email-input" type="email" formControlName="email" pInputText required>
+    <label for="email-input">Email</label>
+        </span>
+      <span class="p-float-label">
+            <input type="date" id="inputmas" mask="99/99/9999" formControlName="date" [(ngModel)]="date" required>
+            <label for="inputmas"></label>
+        </span>
+
+    <p>Est ce que vous etes un etudiant ?  <p-toggleButton [(ngModel)]="checked" onIcon="pi pi-check" offIcon="pi pi-times" formControlName="role" required></p-toggleButton></p>
+
+      <div class="card">
+        <p-toast></p-toast>
+
+        <p-captcha siteKey="6Lc2Jt4ZAAAAAIftFMwtoZ-1n0EYgbh-KuiM28ne" (onResponse)="showResponse($event)"></p-captcha>
+        <br>
+      </div>
+      <p-button label="Submit" icon="pi pi-check" (click)="showConfirm()"  [disabled]="formValid()"></p-button>
+      <!-- form-group// -->
+    </div>
+  </div>
+  <p-toast position="bottom-center" key="c" (onClose)="onReject()" [baseZIndex]="5000">
+    <ng-template let-message pTemplate="message">
+      <div class="p-flex p-flex-column" style="flex: 1">
+        <div class="p-text-center">
+          <i class="pi pi-exclamation-triangle" style="font-size: 3rem"></i>
+          <h4>{{message.summary}}</h4>
+          <p>{{message.detail}}</p>
+        </div>
+        <div class="p-grid p-fluid">
+          <div class="p-col-6">
+            <button type="button" pButton (click)="onConfirm(form.value)" label="Yes" class="p-button-success"></button>
+          </div>
+          <div class="p-col-6">
+            <button type="button" pButton (click)="onReject()" label="No" class="p-button-secondary"></button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-toast>
+</form>
+

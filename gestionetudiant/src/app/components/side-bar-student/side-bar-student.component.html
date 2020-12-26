@@ -1,0 +1,40 @@
+
+
+<nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Espace Etudiant</h3>
+  </div>
+
+  <ul class="list-unstyled components" *ngIf="etudiant">
+    <p><img [src]="etudiant.photo?'':'assets/images/user.png'" id="user">{{username}}</p>
+    <li class="active">
+      <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><fa-icon [icon]="faBook"></fa-icon> Mes cours</a>
+      <ul class="collapse list-unstyled" id="homeSubmenu" >
+        <div *ngIf="courses">
+        <li  *ngFor="let inc of courses">
+          <a href="#"> <fa-icon [icon]="faBookOpen"></fa-icon> {{inc.nom}}</a>
+        </li>
+        </div>
+      </ul>
+    </li>
+    <li>
+      <a href="#"><fa-icon [icon]="faPlusCircle"></fa-icon> S'inscrire à un cours</a>
+
+    </li>
+    <li>
+      <a href="#"><fa-icon [icon]="faUserCircle"></fa-icon> Profile</a>
+    </li>
+
+  </ul>
+  <ul *ngIf="!etudiant">
+    <img src="assets/images/spinner.png" id="logocours" class="pi pi-spin pi-spinner">
+  </ul>
+
+  <ul class="list-unstyled CTAs">
+    <li>
+      <a type="button" (click)="logout()" class="download" ><i class="fas fa-sign-out-alt"></i>Se deconnecter</a>
+    </li>
+
+  </ul>
+</nav>
+

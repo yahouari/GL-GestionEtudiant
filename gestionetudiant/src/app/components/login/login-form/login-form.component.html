@@ -1,0 +1,34 @@
+<article class="card-body mx-auto " style="width: 400px;">
+  <p>
+    <img src="assets/images/logo.png" id="logo" >
+  </p>
+  <h4 class="card-title mt-3 text-center">Login</h4>
+
+  <form [formGroup]="profileForm"  (ngSubmit)="onLogin(profileForm.value)">
+    <div class="form-group">
+      <div *ngIf="this.error" style="margin-top: 10px;margin-bottom: 10px;">
+        <p-message  severity="error" text="{{error}}"></p-message>
+      </div>
+      <div class="input-group-prepend">
+        <span class="input-group-text"><fa-icon [icon]="faUser"></fa-icon></span>
+      </div>
+      <input type="text" class="form-control"  placeholder="full name" formControlName="username"  required/>
+
+    </div> <!-- form-group// -->
+
+    <div class="form-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><fa-icon [icon]="faLock"></fa-icon></span>
+      </div>
+
+      <input type="password"  class="form-control"  placeholder="password" formControlName="password"  required/>
+
+    </div>
+
+    <div class="form-group">
+      <div id="butt">
+        <button type="submit" class="btn btn-success btn-block" [disabled]="!profileForm.valid">se connecter </button>
+      </div>
+    </div> <!-- form-group// -->
+  </form>
+</article>

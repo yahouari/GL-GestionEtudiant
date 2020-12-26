@@ -1,0 +1,30 @@
+<div class="row" >
+<div class="col-lg-4 col-md-4 cardcours p-shadow-4" *ngFor="let c of courses" >
+
+  <div  class="card p-mr-2 p-mb-2"  style="width: 20rem;background-color: #e6f9ff;  ">
+    <img *ngIf="c.photo" src="" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{c.nom}}</h5>
+      <span class="p-tag p-tag-success" id="tag">{{c.theme.nom}}</span>
+      <div class="card-text textt">
+        <p-fieldset  styleClass=""  [toggleable]="true" style="">
+          <p-header style="">Details</p-header>
+          <p>Nombre de places : <span class="p-badge">{{c.nombreDePlace}}</span></p>
+          <p>Nombre d'inscriptions : <span class="p-badge p-badge-success">{{c.inscriptions.length}}</span></p>
+        </p-fieldset>
+        <p-fieldset  styleClass=""  [toggleable]="true">
+          <p-header>Description</p-header>
+          <p>{{c.description}}</p>
+        </p-fieldset>
+
+      </div>
+      <div class="row">
+
+        <p-rating [ngModel]="chooseRating(c)" readonly="true" stars="3" [cancel]="false" class="col-md-6"></p-rating>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>

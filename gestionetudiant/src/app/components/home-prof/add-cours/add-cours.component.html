@@ -1,0 +1,42 @@
+<div class="container">
+  <form #f="ngForm" name="form" [formGroup]="form" (ngSubmit)="saveCours(f.value)">
+  <div class="p-float-label">
+    <input id="float-input" type="text" formControlName="nom" pInputText [(ngModel)]="cours" required>
+    <label for="float-input">Nom du cours</label>
+</div>
+
+<div style="margin-top:15px;margin-bottom: 12px;width: 100px;">
+    <label formControlName="theme">Theme</label>
+    <select class="form-control"   formControlName="theme" required>
+     <option *ngFor="let t of theme" [value]="t.nom" [selected]="t.nom">{{t.nom}}</option>
+
+    </select>
+
+</div>
+  <div>
+
+  <textarea rows="5" cols="30" pInputTextarea autoResize="autoResize" id="description" formControlName="description"  placeholder="Description" required></textarea>
+
+
+  </div>
+  <label for="float">Nombre de places</label>
+  <div>
+
+    <p-inputMask formControlName="nombreDePlace" id="float" mask="99" required></p-inputMask>
+
+  </div>
+
+  <div>
+    Difficulté :
+    <p-rating [ngModel]="chooseRating(difficulte)" [cancel]="false" stars="3" formControlName="difficulte" required></p-rating>
+  </div>
+<div>
+  <span class="p-buttonset">
+    <button type="submit" pButton pRipple label="Save" icon="pi pi-check"  [disabled]="!f.valid" ></button>
+    <button pButton pRipple label="Delete" icon="pi pi-trash" type="reset"></button>
+    <button pButton pRipple label="Cancel" icon="pi pi-times"  type="reset"></button>
+</span>
+</div>
+</form>
+</div>
+

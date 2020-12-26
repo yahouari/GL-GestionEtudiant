@@ -1,0 +1,40 @@
+<h1></h1>
+<div id="type">
+  <p-selectButton [options]="optionss" [(ngModel)]="typeSelected" (click)="coursesFilter(typeSelected)"></p-selectButton>
+</div>
+<p-toast></p-toast>
+<div class="row" *ngIf="coursesSelected">
+
+  <div class="col-lg-3 col-md-4 cardcours p-shadow-4" *ngFor="let c of coursesSelected">
+
+    <div  class="card p-mr-2 p-mb-2" style="width: 20rem;">
+      <img *ngIf="c.photo" src="" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{c.nom}}</h5>
+        <span class="p-tag p-tag-success" id="tag">{{c.theme.nom}}</span>
+        <div class="card-text textt">
+          <p-fieldset  styleClass=""  [toggleable]="true">
+            <p-header>Details</p-header>
+            <p>Nombre de places : <span class="p-badge">{{c.nombreDePlace}}</span></p>
+            <p>Nombre d'inscriptions : <span class="p-badge p-badge-success">{{c.inscriptions.length}}</span></p>
+          </p-fieldset>
+          <p-fieldset  styleClass=""  [toggleable]="true">
+            <p-header>Description</p-header>
+            <p>{{c.description}}</p>
+          </p-fieldset>
+
+        </div>
+        <div class="row">
+          <button pButton  type="button" label="S'inscrire" (click)="inscrire(c.id)" class="p-button-raised p-button-primary col-md-4"></button>
+          <p-rating [ngModel]="chooseRating(c)" readonly="true" stars="3" [cancel]="false" class="col-md-6"></p-rating>
+          <button pButton pRipple type="button" icon="pi pi-cog pi-spin" class="p-button-rounded p-button-help col-md-2 voir"></button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div *ngIf="!courses" class="spinner">
+  <img src="assets/images/courseLogo.png" id="logocours1" class="pi pi-spin pi-spinner">
+  <p class="p-header">Loading...</p>
+</div>

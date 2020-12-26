@@ -1,0 +1,28 @@
+<div class="wrapper">
+
+<app-side-bar-student [inscriptions]="inscriptions" [courses]="courses"></app-side-bar-student>
+  <p-toast></p-toast>
+  <div id="content">
+
+    <nav class=" " id="navbar">
+      <p-menubar [model]="items">
+        <ng-template pTemplate="start">
+          <img src="assets/images/logo.png" height="40" class="p-mr-2">
+        </ng-template>
+        <ng-template pTemplate="end">
+          <div class="">
+            <div class="p-inputgroup">
+              <button type="button" pButton pRipple label="Search"></button>
+              <input type="text" pInputText placeholder="Keyword">
+            </div>
+          </div>
+        </ng-template>
+      </p-menubar>
+    </nav>
+    <div>
+      <p-button type="button" (click)="display = true" icon="pi pi-th-large"></p-button>
+      <app-courses [inscriptions]="inscriptions"></app-courses>
+    </div>
+  </div>
+</div>
+

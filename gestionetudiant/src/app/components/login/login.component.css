@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Chilanka&family=Josefin+Sans&family=Playfair+Display&family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Telex&display=swap');
+
+.divider-text {
+  position: relative;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.divider-text span {
+  padding: 7px;
+  font-size: 12px;
+  position: relative;
+  z-index: 2;
+}
+/*#view1
+{
+  background: url(bac.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}*/
+.errors{
+  color: red;
+}
+
+p{
+  text-align: center;
+}
+#row{
+  height: 1080px;
+
+}
+#emi
+{
+  width: 850px;
+  height: 1000px;
+  margin-left: 100px;
+  margin-top: -30px;
+}
+p,div,h4{
+  font-family: 'Telex', sans-serif;}
+#butt{
+  width: 200px;
+  margin-left: 80px;
+}
+#login{
+  margin-top: 70px;
+}
+.divider-text:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  top: 55%;
+  left: 0;
+  z-index: 1;
+}
+
+h1{
+  font-family: 'Telex', sans-serif;
+  text-align: center;
+  margin-top: 40px;
+
+
+  color: black;
+}
+main{
+ margin-top: 50px;
+}
+
+
+

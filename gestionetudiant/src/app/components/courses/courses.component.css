@@ -1,0 +1,59 @@
+.cardcours
+{
+  margin-right: 1s0px;
+}
+p-rating {
+  margin-top: 15px;
+}
+
+p,div{
+  font-family: 'Telex', sans-serif;
+}
+p-header
+{
+  font-family: 'Telex', sans-serif;
+  font-size: 14px;
+}
+.textt{
+  margin-bottom: 10px;
+}
+.voir
+{
+  width: 15px;
+  margin-top: 5px;
+  border-radius: 100%;
+}
+#logocours,#logocours1{
+  width: 130px;
+}
+p{
+  font-size: 12px;
+}
+.spinner
+{
+
+  position: absolute;
+  top: 40%;
+  left: 50%;
+
+
+}
+.spinner p{
+  margin-left: 45px;
+}
+main
+{
+  width: 220px;
+}
+.card
+{
+  margin-top: 30px;
+}
+#tag{
+  margin-bottom: 15px;
+}
+#type
+{
+  margin-bottom: 15px;
+}
+

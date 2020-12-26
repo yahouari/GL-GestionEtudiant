@@ -1,0 +1,37 @@
+spring:
+  cloud:
+
+    discovery:
+      enabled: true
+  application:
+    name: gateway-service
+
+server:
+  port: 8888
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/auth/realms/cloud-gateway
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: spring-cloud-gateway-client
+            client-secret: 016c6e1c-9cbe-4ad3-aee1-01ddbb370f32
+
+  cloud:
+    gateway:
+      default-filters:
+        - TokenRelay
+feign:
+  client:
+    config:
+      default:
+        readTimeOut: 1600000000

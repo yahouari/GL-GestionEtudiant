@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Telex&display=swap');
+#container{
+  margin-top: 50px;
+}
+div{
+  font-family: 'Telex', sans-serif;
+}
+.home
+{
+  margin-top: 90px;
+}
+h1
+{
+  text-align: center;
+}
+.prof
+{
+width: 70px;
+}

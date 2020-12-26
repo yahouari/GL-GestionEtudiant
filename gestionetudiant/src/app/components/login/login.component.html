@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <h1>Bienvenue dans l'espace Etudiant </h1>
+  <div class="row" id="row" >
+
+
+    <div class="col-lg-6 12 col-sm-12 pr-4 pm-4" >
+      <main lottie [options]="options" (animationCreated)="animationCreated($event)"></main>
+    </div>
+    <div class="col-lg-6 col-sm-12 col-md-12 pm-4"  >
+      <div id="login">
+        <div class="container">
+          <p-tabMenu  #menuItems [model]="items" [activeItem]="activeItem" (click)="activeElement()"></p-tabMenu>
+          <div [ngSwitch]="this.activeItem.label">
+
+            <div *ngSwitchCase="this.items[0].label">
+              <app-login-form></app-login-form>
+            </div>
+            <div *ngSwitchCase="this.items[1].label">
+        <app-inscription-form></app-inscription-form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+

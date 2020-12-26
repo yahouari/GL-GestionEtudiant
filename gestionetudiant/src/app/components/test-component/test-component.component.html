@@ -1,0 +1,8 @@
+<input #box type="text" (keyup.enter)="onKey(box.value)" (blur)="onKey(box.value)">
+<ul *ngFor="let v of tests">
+  <li>{{v}}</li>
+</ul>
+<ul *ngFor="let v of changes">
+  <li>{{v}}</li>
+</ul>
+
